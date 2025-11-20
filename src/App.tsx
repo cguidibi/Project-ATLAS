@@ -3,6 +3,7 @@ import Layout from './components/layout/Layout'
 import Subsidiaries from './pages/Subsidiaries'
 import BankAccounts from './pages/BankAccounts'
 import DebtInstruments from './pages/DebtInstruments'
+import Dashboard from './pages/Dashboard'
 
 function App() {
     return (
@@ -10,7 +11,7 @@ function App() {
             <Routes>
                 <Route path="/" element={<Layout />}>
                     <Route index element={<Navigate to="/dashboard" replace />} />
-                    <Route path="dashboard" element={<div className="p-6">Dashboard Placeholder</div>} />
+                    <Route path="dashboard" element={<Dashboard />} />
                     <Route path="subsidiaries" element={<Subsidiaries />} />
                     <Route path="bank-accounts" element={<BankAccounts />} />
                     <Route path="debt-instruments" element={<DebtInstruments />} />
