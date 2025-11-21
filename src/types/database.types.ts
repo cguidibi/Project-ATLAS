@@ -122,6 +122,49 @@ export interface Database {
                     status?: string
                 }
             }
+            daily_balances: {
+                Row: {
+                    id: string
+                    created_at: string
+                    bank_account_id: string
+                    date: string
+                    closing_balance: number
+                    available_balance: number | null
+                    currency: string
+                }
+                Insert: {
+                    id?: string
+                    created_at?: string
+                    bank_account_id: string
+                    date: string
+                    closing_balance: number
+                    available_balance?: number | null
+                    currency: string
+                }
+                Update: {
+                    id?: string
+                    created_at?: string
+                    bank_account_id?: string
+                    date?: string
+                    closing_balance?: number
+                    available_balance?: number | null
+                    currency?: string
+                }
+            }
+        }
+        Views: {
+            bank_accounts_view: {
+                Row: {
+                    id: string
+                    created_at: string
+                    bank_name: string
+                    account_number_secure: string
+                    currency: string
+                    subsidiary_id: string
+                    subsidiary_name: string | null
+                    latest_balance: number
+                }
+            }
         }
     }
 }
