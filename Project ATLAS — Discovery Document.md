@@ -92,6 +92,24 @@ Reporting & Exports:
 • Scheduled reports  
 • GL export (summary & detail)
 
+Bank Connectivity & Reconciliation:
+• Integration: Support for BAI2 file upload for automatic statement import  
+• Data parsing: Automatic extraction of closing balances (Ledger/Available) and transactions  
+• Balance Updates: Daily bank balance history by account and subsidiary  
+• FX Rate Engine: Centralized exchange rate table (e.g., EUR/USD). Enables multi-currency consolidation in Dashboards.
+
+Manual Tradeflow (Cash Adjustments):
+• 'Manual Trade' entity for non-bank/forecast flows (Tax, Interco, Payroll, Capex)  
+• Fields: Amount, Currency, Value Date, Category, Subsidiary, Direction (In/Out), Status (Forecast/Confirmed)  
+
+Intercompany Module:
+• Intercompany Loans: Debt instruments where Lender and Borrower are internal Subsidiaries.
+• Mirror Entries: Automatic generation of reciprocal accounting entries.
+
+Advanced Reporting & Security:
+• Report A: Daily Cash Worksheet (Operational View) — Day Start Balance + Debt Transactions + Manual Trades = Day End Balance. Granular view by Subsidiary/Currency  
+• Report B: Liquidity Inquiry (Strategic/Forecasting) — Multi-horizon forecasting (Day/Week/Month/Quarter/Year). Rolling forecast (30/60/90 days to 12 months). Aggregation of Bank Balances + Committed Debt Headroom + Forecasted Flows
+• Maker-Checker Workflow: Instruments or Trades above defined thresholds require 'Pending Approval' status before impacting reports.
 
 5. Non‑Functional Requirements
 
@@ -210,6 +228,11 @@ Step 12 — Go‑live prep + documentation + pilot rollout
 • Recursive subsidiaries  
 • Modular services: amortization, payments, FX, derivatives  
 • Realtime updates via Supabase  
+• BAI2 parser service  
+• Manual Trade entity with status workflow  
+• Aggregated liquidity views (Materialized Views)
+• FX Rate Engine (Centralized Table)
+• Intercompany Mirror Logic (Triggers/Functions)
 
 
 12. Next Steps
